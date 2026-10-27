@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FITZONE Gym & Fitness static admin panel demo">
+  <title>FITZONE Admin Panel Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="login-screen" id="loginScreen" aria-label="Admin login">
+    <div class="login-photo" role="img" aria-label="Athlete training with dumbbells"></div>
+    <div class="login-panel">
+      <div class="login-inner">
+        <div class="brand brand--large">
+          <span class="brand-mark" aria-hidden="true"><i></i><b></b><i></i></span>
+          <span><strong>FIT<span>ZONE</span></strong><small>GYM &amp; FITNESS</small></span>
+        </div>
+        <div class="login-copy">
+          <p class="eyebrow">SECURE ADMIN PORTAL</p>
+          <h1>Admin Login</h1>
+          <p>Sign in to manage your gym</p>
+        </div>
+        <form id="loginForm" novalidate>
+          <label class="login-field">
+            <span class="field-icon" aria-hidden="true">✉</span>
+            <input id="email" type="email" placeholder="Email Address" value="admin@fitzone.com" autocomplete="email" required>
+          </label>
+          <label class="login-field">
+            <span class="field-icon lock-icon" aria-hidden="true">▣</span>
+            <input id="password" type="password" placeholder="Password" value="fitzone" autocomplete="current-password" required>
+            <button class="icon-btn password-toggle" type="button" aria-label="Show password">◉</button>
+          </label>
+          <div class="login-options">
+            <label><input type="checkbox" checked> Remember me</label>
+            <button type="button" class="text-link" data-toast="Password reset is simulated in this demo.">Forgot Password?</button>
+          </div>
+          <button class="primary-btn login-btn" type="submit">Login</button>
+          <p class="demo-hint">Demo access is pre-filled — click Login</p>
+          <div class="or"><span>OR CONTINUE WITH</span></div>
+          <button type="button" class="google-btn" data-toast="Google sign-in is simulated in this static demo."><span>G</span> Login with Google</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="app-shell" id="appShell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="brand sidebar-brand">
+        <span class="brand-mark" aria-hidden="true"><i></i><b></b><i></i></span>
+        <span><strong>FIT<span>ZONE</span></strong><small>GYM &amp; FITNESS</small><em>ADMIN PANEL</em></span>
+      </div>
+      <nav class="main-nav" aria-label="Admin navigation">
+        <button class="nav-item active" data-page="dashboard"><span>⌂</span>Dashboard</button>
+        <button class="nav-item" data-page="members"><span>♙</span>Members</button>
+        <button class="nav-item" data-page="plans"><span>▤</span>Plans &amp; Memberships</button>
+        <button class="nav-item" data-page="attendance"><span>✓</span>Attendance</button>
+        <button class="nav-item" data-page="trainers"><span>♙</span>Trainers</button>
+        <button class="nav-item" data-page="enquiries"><span>▱</span>Enquiries</button>
+        <button class="nav-item" data-page="payments"><span>▣</span>Payments</button>
+        <button class="nav-item" data-page="classes"><span>♡</span>Classes</button>
+        <button class="nav-item" data-page="website"><span>⊞</span>Website Content</button>
+        <button class="nav-item" data-page="gallery"><span>▧</span>Gallery</button>
+        <button class="nav-item" data-page="reviews"><span>☆</span>Reviews</button>
+        <button class="nav-item" data-page="reports"><span>▥</span>Reports</button>
+        <button class="nav-item" data-page="notifications"><span>♧</span>Notifications</button>
+        <button class="nav-item" data-page="settings"><span>⚙</span>Settings</button>
+      </nav>
+      <div class="sidebar-athlete"></div>
+      <button class="logout-btn" id="logoutBtn"><span>↪</span>Logout</button>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+        <label class="search-box"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search members, enquiries, payments..."></label>
+        <div class="topbar-actions">
+          <button class="notification-bell" data-page-link="notifications" aria-label="Notifications">♧<b>3</b></button>
+          <div class="admin-avatar">AS</div>
+          <div class="admin-meta"><strong>Admin</strong><small>Super Admin</small></div>
+          <button class="icon-btn" aria-label="Open profile menu" data-toast="Profile menu is ready for a backend integration.">⌄</button>
+        </div>
+      </header>
+      <div class="mobile-overlay" id="mobileOverlay"></div>
+      <div class="page-host" id="pageHost" tabindex="-1"></div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalBody"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
